@@ -197,7 +197,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2021-05-09 18:05:49 / 修改时间：18:29:56" itemprop="dateCreated datePublished" datetime="2021-05-09T18:05:49+08:00">2021-05-09</time>
+      <time title="创建时间：2021-05-09 18:05:49 / 修改时间：21:51:03" itemprop="dateCreated datePublished" datetime="2021-05-09T18:05:49+08:00">2021-05-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -238,6 +238,10 @@
 
 <p>执行命令</p>
 <figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose -f docker-compose-<span class="keyword">env</span>.yml up -d</span><br></pre></td></tr></table></figure>
+
+<h2 id="elasticsearch需要安装中文分词器IKAnalyzer，并重新启动。"><a href="#elasticsearch需要安装中文分词器IKAnalyzer，并重新启动。" class="headerlink" title="elasticsearch需要安装中文分词器IKAnalyzer，并重新启动。"></a>elasticsearch需要安装中文分词器IKAnalyzer，并重新启动。</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it elasticsearch /bin/bash</span><br><span class="line"><span class="meta">#</span><span class="bash">此命令需要在容器中运行</span></span><br><span class="line">elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.6.2/elasticsearch-analysis-ik-7.6.2.zip</span><br><span class="line">docker restart elasticsearch</span><br><span class="line"><span class="meta">#</span><span class="bash">elasticsearch-sql</span></span><br><span class="line">elasticsearch-plugin install https://github.com/NLPchina/elasticsearch-sql/releases/download/7.6.2.0/elasticsearch-sql-7.6.2.0.zip</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="logstash-需要安装json-lines插件，并重新启动"><a href="#logstash-需要安装json-lines插件，并重新启动" class="headerlink" title="logstash 需要安装json_lines插件，并重新启动"></a>logstash 需要安装<code>json_lines</code>插件，并重新启动</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it logstash /bin/bash</span><br><span class="line">logstash-plugin install logstash-codec-json_lines</span><br><span class="line">docker restart logstash</span><br></pre></td></tr></table></figure>
 
 
       
@@ -1297,10 +1301,16 @@ public static void main(String[] args) &#123;
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2021-04-25 22:04:31 / 修改时间：22:09:24" itemprop="dateCreated datePublished" datetime="2021-04-25T22:04:31+08:00">2021-04-25</time>
+      <time title="创建时间：2021-04-25 22:04:31" itemprop="dateCreated datePublished" datetime="2021-04-25T22:04:31+08:00">2021-04-25</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-05-09 22:38:19" itemprop="dateModified" datetime="2021-05-09T22:38:19+08:00">2021-05-09</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
